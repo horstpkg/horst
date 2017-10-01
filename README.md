@@ -11,3 +11,10 @@ __WORK IN PROGRESS__
 ```bash
 $ npm install -g horst
 ```
+
+## Usage
+
+```bash
+$ cd MY_NODE_PROJECT
+$ horst
+```

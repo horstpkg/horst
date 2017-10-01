@@ -2,5 +2,11 @@
   "name": "horst",
   "version": "0.0.1",
   "license": "MIT",
-  "repository": "horstpkg/horst"
+  "repository": "horstpkg/horst",
+  "bin": {
+    "horst": "index.js"
+  },
+  "dependencies": {
+    "got": "^7.1.0"
+  }
 }
