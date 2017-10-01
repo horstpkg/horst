@@ -11,7 +11,7 @@ let server
 const start = new Date()
 
 try {
-  server = fs.readFileSync(`${process.env.HOME}/.horst`, 'utf8')
+  server = fs.readFileSync(`${process.env.HOME}/.horst`, 'utf8').trim()
 } catch (_) {
   console.error('First set up https://github.com/horstpkg/server, then:')
   console.error()
@@ -21,7 +21,7 @@ try {
 }
 
 fs.createReadStream('package.json')
-  .pipe(got.stream.post(serer))
+  .pipe(got.stream.post(server))
   .pipe(fs.createWriteStream('.horst.tar.gz'))
   .on('close', () => {
     execSync('tar -xzf .horst.tar.gz')
