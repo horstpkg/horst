@@ -4,8 +4,7 @@
 
 const got = require('got')
 const fs = require('fs')
-const tmpdir = require('os').tmpdir()
-const {execSync} = require('child_process')
+const { execSync } = require('child_process')
 
 let server
 const start = new Date()
@@ -20,7 +19,8 @@ try {
   process.exit(1)
 }
 
-fs.createReadStream('package.json')
+fs
+  .createReadStream('package.json')
   .pipe(got.stream.post(server))
   .pipe(fs.createWriteStream('.horst.tar.gz'))
   .on('close', () => {
